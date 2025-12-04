@@ -1,1 +1,2 @@
-Miguel 1G
+Miguel Gasperini klidzio 
+Turma 1G

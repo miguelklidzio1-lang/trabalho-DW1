@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="estilo.css">
     <title>Lista de Tarefas</title>
 </head>
 <body>
@@ -15,14 +14,13 @@
         <a href="cadastro_tarefas.html">
             <button id="ad_tarefas">Adicionar Tarefa</button>
         </a>
-        <button id="excluir" style="display:none;">Excluir Selecionadas</button>
     </div>
 
-    <div class="mensagemVazia" style="display:none; text-align:center; padding:20px;">
+    <div class="mensagemVazia">
         <p>Nenhuma tarefa cadastrada</p>
     </div>
 
-    <div id="tabela" style="display:none;">
+    <div id="tabela">
         <table id="tarefas" class="tarefas">
             <thead>
                 <tr>
@@ -32,13 +30,12 @@
                     <th>Recursos</th>
                     <th>Data Limite</th>
                     <th>Matrícula</th>
-                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

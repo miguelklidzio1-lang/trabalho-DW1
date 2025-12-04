@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="estilo.css">
     <title>Cadastro de Tarefas</title>
 </head> 
 <body>
+
     <section class="container_principal">
 
         <h1>Novo Cadastro</h1>
+
         <form id="formulario">
+
             <label for="prioridade">Prioridade</label>
             <select id="prioridade" required>
                 <option value="">Selecione a prioridade</option>
@@ -35,13 +37,16 @@
             <label for="matricula">Matrícula</label>
             <input type="number" id="matricula" required />
 
-            <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
-                <button type="submit">Salvar Tarefa</button>
-                <a href="lista_tarefas.html"><button type="button">Voltar à Lista</button></a>
+            <div class="adTarefa">
+                <button type="submit" class="salvar">Salvar Tarefa</button>
+                <a href="lista_tarefas.html">
+                    <button type="button" class="voltar">Voltar à Lista</button>
+                </a>
             </div>
+
         </form>
     </section>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

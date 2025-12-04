@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+<section class="container_principal">
+    <h1>Lista de Tarefas</h1>
+
+    <div id="taskInputContainer">
+        <a href="cadastro_tarefas.html">
+            <button id="ad_tarefas">Adicionar Tarefa</button>
+        </a>
+        <button id="excluir" style="display:none;">Excluir Selecionadas</button>
+    </div>
+
+    <div class="mensagemVazia" style="display:none; text-align:center; padding:20px;">
+        <p>Nenhuma tarefa cadastrada</p>
+    </div>
+
+    <div id="tabela" style="display:none;">
+        <table id="tarefas" class="tarefas">
+            <thead>
+                <tr>
+                    <th>Prioridade</th>
+                    <th>Descrição</th>
+                    <th>Local</th>
+                    <th>Recursos</th>
+                    <th>Data Limite</th>
+                    <th>Matrícula</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

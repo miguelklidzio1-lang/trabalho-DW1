@@ -1,0 +1,94 @@
+/* TEMA SIMPLES ROXO */
+
+/* Fundo roxo com a imagem */
+body {
+    background: url('../img/img4.jpg') no-repeat center;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Área principal */
+.container_principal {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: white;
+}
+
+/* Botão adicionar */
+#ad_tarefas {
+    background: purple;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+/* Labels */
+label {
+    margin-top: 10px;
+    color: white;
+}
+
+/* Inputs simples */
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.tabela {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tarefas {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(128, 128, 128, 0.229);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tarefas th {
+    background: purple;
+    color: white;
+    padding: 10px;
+}
+
+.tarefas td {
+    padding: 10px;
+    color: white;
+}
+
+.urgente td {
+    color: red;
+}
+
+.edit-btn {
+    background: blue;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 1px;
+}
+
+.delete-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 1px;
+}

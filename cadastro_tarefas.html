@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Cadastro de Tarefas</title>
+</head> 
+<body>
+    <section class="container_principal">
+
+        <h1>Novo Cadastro</h1>
+        <form id="formulario">
+            <label for="prioridade">Prioridade</label>
+            <select id="prioridade" required>
+                <option value="">Selecione a prioridade</option>
+                <option value="Baixa">Baixa</option>
+                <option value="Normal">Normal</option>
+                <option value="Urgente">Urgente</option>
+            </select>
+
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" rows="3" required placeholder="Digite a descrição"></textarea>
+
+            <label for="local">Local</label>
+            <input type="text" id="local" required />
+
+            <label for="recursos">Recursos Necessários</label>
+            <textarea id="recursos" rows="3" placeholder="Liste recursos separados por vírgula (opcional)"></textarea>
+
+            <label for="dataLimite">Data Limite</label>
+            <input type="datetime-local" id="dataLimite" required />
+
+            <label for="matricula">Matrícula</label>
+            <input type="number" id="matricula" required />
+
+            <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                <button type="submit">Salvar Tarefa</button>
+                <a href="lista_tarefas.html"><button type="button">Voltar à Lista</button></a>
+            </div>
+        </form>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

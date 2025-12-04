@@ -1,5 +1,5 @@
 body {
-    background: url('../img/img4.jpg') no-repeat center;
+    background-color: rgb(78, 71, 182);
     background-size: cover;
     font-family: Arial, sans-serif;
     padding: 20px;
@@ -20,9 +20,20 @@ h1 {
     background: purple;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 5px;
     margin: 5px;
+    cursor: pointer;
+}
+
+.adTarefa button {
+    background: purple;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
 }
 
 label {
@@ -40,8 +51,7 @@ input, textarea, select {
 
 .tabela {
     margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    
 }
 
 .tarefas {
@@ -64,7 +74,7 @@ input, textarea, select {
 }
 
 .urgente td {
-    color: red;
+    color: rgb(148, 0, 0);
 }
 
 .edit-btn {
@@ -84,4 +94,3 @@ input, textarea, select {
     border-radius: 3px;
     margin: 1px;
 }
-

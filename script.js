@@ -1,6 +1,5 @@
 var API_URL = "http://159.65.228.63/tarefas";
 
-// PEGAR DADOS DO FORMULÁRIO
 function getDadosTarefa() {
     var recursos = document.getElementById("recursos").value.split(",");
     var listaRecursos = [];
@@ -22,7 +21,6 @@ function getDadosTarefa() {
     };
 }
 
-// VALIDAR CAMPOS
 function validarCampos(tarefa) {
     if (
         tarefa.prioridade === "" ||
@@ -37,7 +35,6 @@ function validarCampos(tarefa) {
     return true;
 }
 
-// CADASTRAR NOVA TAREFA
 async function cadastrarTarefa(event) {
     event.preventDefault();
 
@@ -66,7 +63,6 @@ async function cadastrarTarefa(event) {
     }
 }
 
-// BUSCAR LISTA DE TAREFAS
 async function buscarTarefas() {
     try {
         var resposta = await fetch(API_URL);
@@ -77,7 +73,6 @@ async function buscarTarefas() {
     }
 }
 
-// CRIAR TABELA DE TAREFAS (cria botões com event listeners)
 async function criarTabelaTarefas() {
     var tbody = document.querySelector("#tarefas tbody");
     var tabela = document.getElementById("tabela");
@@ -100,12 +95,10 @@ async function criarTabelaTarefas() {
     tarefas.forEach(function (t) {
         var tr = document.createElement("tr");
 
-        // aplica classe urgente se necessário (cuida de maiúsculas/minúsculas)
         if (typeof t.prioridade === "string" && t.prioridade.toLowerCase() === "urgente") {
             tr.classList.add("urgente");
         }
 
-        // células
         var tdPrioridade = document.createElement("td");
         tdPrioridade.textContent = t.prioridade || "";
 
@@ -124,13 +117,11 @@ async function criarTabelaTarefas() {
         var tdMatricula = document.createElement("td");
         tdMatricula.textContent = t.matricula || "";
 
-        // AÇÕES
         var tdAcoes = document.createElement("td");
 
         var editBtn = document.createElement("button");
         editBtn.textContent = "Editar";
         editBtn.className = "edit-btn";
-        // guarda id no atributo dataset para evitar problemas com tipos
         editBtn.dataset.id = t.id !== undefined ? t.id : (t._id !== undefined ? t._id : "");
         editBtn.addEventListener("click", function () {
             var id = this.dataset.id;
@@ -150,8 +141,6 @@ async function criarTabelaTarefas() {
 
         tdAcoes.appendChild(editBtn);
         tdAcoes.appendChild(deleteBtn);
-
-        // montar linha
         tr.appendChild(tdPrioridade);
         tr.appendChild(tdDescricao);
         tr.appendChild(tdLocal);
@@ -164,7 +153,6 @@ async function criarTabelaTarefas() {
     });
 }
 
-// EXCLUIR TAREFA
 async function excluirTarefa(id) {
     if (!confirm("Excluir esta tarefa?")) return;
 
@@ -174,20 +162,16 @@ async function excluirTarefa(id) {
             alert("Erro ao excluir!");
             return;
         }
-        // remove linha sem recarregar tudo (melhor experiência)
         criarTabelaTarefas();
     } catch (e) {
         alert("Erro ao conectar com a API.");
     }
 }
 
-// EDITAR
 function editarTarefa(id) {
-    // redireciona para o formulário de edição (seu formulário precisa ler ?id=)
     window.location.href = "cadastro_tarefas.html?id=" + encodeURIComponent(id);
 }
 
-// INICIALIZA
 window.onload = function () {
     var formCadastro = document.getElementById("formulario");
     if (formCadastro) formCadastro.onsubmit = cadastrarTarefa;

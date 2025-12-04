@@ -90,8 +90,7 @@ async function criarTabelaTarefas() {
     }
 
     mensagem.style.display = "none";
-    tabela.style.display = "table";
-
+ 
     tarefas.forEach(function (t) {
         var tr = document.createElement("tr");
 
@@ -117,59 +116,15 @@ async function criarTabelaTarefas() {
         var tdMatricula = document.createElement("td");
         tdMatricula.textContent = t.matricula || "";
 
-        var tdAcoes = document.createElement("td");
-
-        var editBtn = document.createElement("button");
-        editBtn.textContent = "Editar";
-        editBtn.className = "edit-btn";
-        editBtn.dataset.id = t.id !== undefined ? t.id : (t._id !== undefined ? t._id : "");
-        editBtn.addEventListener("click", function () {
-            var id = this.dataset.id;
-            if (!id) return alert("ID da tarefa não encontrado.");
-            editarTarefa(id);
-        });
-
-        var deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Excluir";
-        deleteBtn.className = "delete-btn";
-        deleteBtn.dataset.id = t.id !== undefined ? t.id : (t._id !== undefined ? t._id : "");
-        deleteBtn.addEventListener("click", function () {
-            var id = this.dataset.id;
-            if (!id) return alert("ID da tarefa não encontrado.");
-            excluirTarefa(id);
-        });
-
-        tdAcoes.appendChild(editBtn);
-        tdAcoes.appendChild(deleteBtn);
         tr.appendChild(tdPrioridade);
         tr.appendChild(tdDescricao);
         tr.appendChild(tdLocal);
         tr.appendChild(tdRecursos);
         tr.appendChild(tdData);
         tr.appendChild(tdMatricula);
-        tr.appendChild(tdAcoes);
 
         tbody.appendChild(tr);
     });
-}
-
-async function excluirTarefa(id) {
-    if (!confirm("Excluir esta tarefa?")) return;
-
-    try {
-        var resposta = await fetch(API_URL + "/" + encodeURIComponent(id), { method: "DELETE" });
-        if (!resposta.ok) {
-            alert("Erro ao excluir!");
-            return;
-        }
-        criarTabelaTarefas();
-    } catch (e) {
-        alert("Erro ao conectar com a API.");
-    }
-}
-
-function editarTarefa(id) {
-    window.location.href = "cadastro_tarefas.html?id=" + encodeURIComponent(id);
 }
 
 window.onload = function () {
